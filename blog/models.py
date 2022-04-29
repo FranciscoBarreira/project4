@@ -18,12 +18,12 @@ CATEGORY_OPTIONS = (
 
 class Post(models.Model):
 
-    title = models.CharField(max_length="100", unique=True)
-    slug = models.SlugField(max_length="100", unique=True)
+    title = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
     excerpt = models.TextField(blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, 
                                related_name="blog_posts")
-    category = models.CharField(max_length=1, choices=CATEGORY_OPTIONS) 
+    category = models.CharField(max_length=3, choices=CATEGORY_OPTIONS) 
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     body = models.TextField()
