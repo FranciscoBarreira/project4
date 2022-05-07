@@ -8,7 +8,7 @@ CATEGORY_OPTIONS = (
     ('R', 'Reviews'),
     ('A', 'Announcements'),
     ('N', 'News'),
-    ('OP', 'Opinion'),
+    ('O', 'Opinion'),
     ('P', 'Previews'),
     ('S', 'Streaming'),
     ('T', 'Tech'),
@@ -23,11 +23,11 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, 
                                related_name="blog_posts")
-    category = models.CharField(max_length=3, choices=CATEGORY_OPTIONS) 
+    category = models.CharField(max_length=4, choices=CATEGORY_OPTIONS) 
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     body = models.TextField()
-    post_image = CloudinaryField(name='image', default='placeholder')
+    post_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=POST_STATUS, default=0)
     upvotes = models.ManyToManyField(User, related_name='blog_upvotes', 
                                      blank=True)
