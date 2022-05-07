@@ -7291,7 +7291,7 @@ textarea.form-control-lg {
 }
 
 .my-5 {
-  margin-top: 3rem !important;
+  margin-top: rem !important;
   margin-bottom: 3rem !important;
 }
 
@@ -11291,3 +11291,13 @@ textarea.form-control-lg {
 .icon-float strong {
   display: inline;
 }
+
+.img-background {
+  background-image: url('../css/get_image_large.jpg');
+}
+
+.txt-col{
+  color:whitesmoke;
+  
+}
+
