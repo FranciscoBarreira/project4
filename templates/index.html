@@ -18,8 +18,8 @@
                     </div>
                     <!-- Nested row for non-featured blog posts-->
                     <div class="row">
+                        {% for post in post_list %}
                         <div class="col-lg-6">
-                            {% for post in post_list %}
                             <!-- Blog post-->
                             <div class="card mb-4">
                                 {% if "placeholder" in post.featured_image.url %}
@@ -34,9 +34,8 @@
                                     <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
                                 </div>
                             </div>
-                            {% endfor %}
                         </div>
-                        
+                        {% endfor %}
                           
                     </div>
 
