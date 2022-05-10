@@ -236,8 +236,8 @@ sup {
 }
 
 a {
-  color: #0d6efd;
-  text-decoration: underline;
+  color: var(--bs-table-active-color);
+  text-decoration: none;
 }
 a:hover {
   color: #0a58ca;
@@ -561,7 +561,8 @@ progress {
 
 .list-unstyled {
   padding-left: 0;
-  list-style: none;
+  list-style: inside;
+  
 }
 
 .list-inline {
@@ -4567,7 +4568,8 @@ textarea.form-control-lg {
 .card-header {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgb(119, 117, 117);
+  color: whitesmoke;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 .card-header:first-child {
