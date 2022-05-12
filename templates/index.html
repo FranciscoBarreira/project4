@@ -58,7 +58,8 @@
                                 <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
                                 {% endif %}
                                 <div class="card-body">
-                                    <div class="small text-muted">By:{{ post.author }},{{ post.created_on}}</div>
+                                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
+                                    <div class="small text-muted">{{ post.author }}, {{ post.created_on}}</div>
                                     <h2 class="card-title h4">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                     <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>

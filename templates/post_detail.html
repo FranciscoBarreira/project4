@@ -15,7 +15,7 @@
                     <!-- Post meta content-->
                     <div class="text-muted fst-italic mb-2">Posted by{{ post.author }}, on {{ post.created_on}}</div>
                     <!-- Post categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.category}}</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
                     <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.author}}</a>
                 </header>
                 <!-- Preview image figure-->
