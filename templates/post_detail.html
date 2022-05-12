@@ -19,11 +19,12 @@
                     <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.author}}</a>
                 </header>
                 <!-- Preview image figure-->
-                {% if "placeholder" in post.featured_image.url %}
+                {% if "placeholder" in post.post_image.url %}
                 <img class="img-fluid rounded" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." />
                 {% else %}
                 <img class="img-fluid rounded" src="{{ post.post_image.url }}"/>
                 {% endif %}
+               
                 <!-- Post content-->
                 <section class="mb-5">
                     <p class="fs-5 mb-4">{{ post.body | safe }}</p>
