@@ -51,9 +51,11 @@
                         </div>
                         {% else %}
                         {% if user.is_authenticated%}
-                        <form class="mb-4" method="post"><textarea class="form-control" rows="3" placeholder="Share Your Thoughts With Us, {{ user.username}}!"></textarea></form>
+                        <form class="mb-4" method="post"><textarea class="form-control" rows="3" placeholder="Share Your Thoughts With Us, {{ user.username}}!"></textarea>
+                        {{ comment_form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 1.3em;">Submit</button>
+                        </form>
                         <!--<input class="btn btn-primary" type="submit" value="Submit">-->
                         {% endif %}
                         {% endif %}
