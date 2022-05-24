@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
@@ -70,3 +71,23 @@ class PostDetail(View):
             },
         )
 
+
+class Upvote(View):
+   def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.upvotes.filter(id=request.user.id).exists():
+            post.upvotes.remove(request.user)
+        else:
+            post.upvotes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_upvote', args=[slug]))
+
+class Downvote(View):
+   def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.downvotes.filter(id=request.user.id).exists():
+            post.downvotes.remove(request.user)
+        else:
+            post.downvotes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_downvote', args=[slug]))
