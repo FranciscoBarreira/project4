@@ -4568,7 +4568,9 @@ textarea.form-control-lg {
 .card-header {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
-  background-color: rgb(119, 117, 117);
+  
+  background-color: rgb(153, 0, 153);
+  font-weight: 700;
   color: whitesmoke;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -11311,4 +11313,14 @@ textarea.form-control-lg {
 
 .display {
   display: inline;
+}
+
+
+.img-circle {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.img-circle img{
+  border-radius: 50%;
 }
