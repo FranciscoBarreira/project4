@@ -66,7 +66,7 @@
                         </div>
                         {% else %}
                         {% if user.is_authenticated%}
-                                <form class="mb-4" method="post">Share Your Thoughts with us,<span class="txt-comment"> {{ user.username }}!</span>
+                                <form class="mb-4" method="post">Share Your Thoughts With Us,<span class="txt-comment"> {{ user.username }}!</span>
                         {{ comment_form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary" style="margin-top: 1.3em;">Submit</button>
@@ -128,10 +128,52 @@
                     </div>
                 </div>
             </div>
-            <!-- Side widget-->
+            <!-- Side widget 2-->
             <div class="card mb-4">
-                <div class="card-header">Side Widget</div>
-                <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                <div class="card-header">Recommended Games</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="https://www.ea.com/games/apex-legends" target ='_blank'>Apex Legends</a></li>
+                                <li><a href="https://en.bandainamcoent.eu/elden-ring/elden-ring" target ='_blank'>Elden Ring</a></li>
+                                <li><a href="https://www.gran-turismo.com/" target ='_blank'>Gran Turismo 7</a></li>
+                                <li><a href="https://genshin.hoyoverse.com/" target ='_blank'>Genshi Impact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="https://www.rockstargames.com/gta-v" target ='_blank'>GTA V</a></li>
+                                <li><a href="https://quarrygame.2k.com/" target ='_blank'>The Quarry</a></li>
+                                <li><a href="https://playvalorant.com/en-us/" target ='_blank'>Valorant</a></li>
+                                <li><a href="https://www.callofduty.com/warzone" target ='_blank'>Warzone</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">Recommended Streamers</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="https://www.twitch.tv/fuslie" target ='_blank'>Fuslie</a></li>
+                                <li><a href="https://www.twitch.tv/jarnoopmeer" target ='_blank'>JarnoOpmeer</a></li>
+                                <li><a href="https://www.twitch.tv/kyedae" target ='_blank'>Kyedae</a></li>
+                                <li><a href="https://www.twitch.tv/loltyler1" target ='_blank'>LolTyler1</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="https://www.twitch.tv/nickmercs" target ='_blank'>NickMercs</a></li>
+                                <li><a href="https://www.youtube.com/user/timthetatman" target ='_blank'>TimTheTatMan</a></li>
+                                <li><a href="https://www.youtube.com/c/Valkyrae1" target ='_blank'>Valkyrae</a></li>
+                                <li><a href="https://www.twitch.tv/xqc" target ='_blank'>XQC</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
