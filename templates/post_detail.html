@@ -35,12 +35,12 @@
                     <div class="col-1 icon-float">
                         <div>
                             {% if user.is_authenticated %}
-                            <form class="display" method="post" action="{% url 'blog_upvotes' post.slug %}">
+                            <form class="display" method="post" action="{% url 'blog_upvote' post.slug %}">
                                 {% csrf_token %}
                                 {% if upvoted %}
-                                <button type="submit" value="{{post.slug}}" name="post_id"><i class="fa fa-arrow-up"></i></button>
+                                <button type="submit" value="{{post.slug}}" name="post_id" class="btn btn-danger"><i class="fa fa-arrow-up"></i></button>
                                 {% else %}
-                                <button type="submit" value="{{post.slug}}" name="post_id" class="btn btn-outline-danger"><i class="fa fa-arrow-down"></i></button>
+                                <button type="submit" value="{{post.slug}}" name="post_id" class="btn btn-outline-danger"><i class="fa fa-arrow-up"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}

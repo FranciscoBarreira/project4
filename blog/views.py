@@ -80,7 +80,7 @@ class Upvote(View):
         else:
             post.upvotes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_upvote', args=[slug]))
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 class Downvote(View):
    def post(self, request, slug, *args, **kwargs):
@@ -90,4 +90,4 @@ class Downvote(View):
         else:
             post.downvotes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_downvote', args=[slug]))
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))

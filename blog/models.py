@@ -29,9 +29,9 @@ class Post(models.Model):
     body = models.TextField()
     post_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=POST_STATUS, default=0)
-    upvotes = models.ManyToManyField(User, related_name='blog_upvotes', 
+    upvotes = models.ManyToManyField(User, related_name='blog_upvote', 
                                      blank=True)
-    downvotes = models.ManyToManyField(User, related_name="blog_downvotes",
+    downvotes = models.ManyToManyField(User, related_name='blog_downvote',
                                        blank=True)
 
     class Meta:
