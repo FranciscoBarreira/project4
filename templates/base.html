@@ -31,6 +31,18 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible " id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
         <!-- Page header with logo and tagline-->
         <header class="py-5 bg-light border-bottom mb-4 img-background txt-margin">
             <div class="container">
@@ -58,6 +70,14 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- Font Awesome JS-->
-        <script src="https://kit.fontawesome.com/9c5af30eeb.js" crossorigin="anonymous"></script>  
+        <script src="https://kit.fontawesome.com/9c5af30eeb.js" crossorigin="anonymous"></script> 
+        <!-- Message dismissal JS-->
+        <script>
+            setTimeout(function () {
+                let messages = document.getElementById('msg');
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }, 2000);
+        </script> 
     </body>
 </html>
