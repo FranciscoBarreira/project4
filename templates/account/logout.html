@@ -1,21 +1,33 @@
-{% extends "account/base.html" %}
+
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
+
+<link href="/static/css/style.css" rel="stylesheet"/>
+<link href="/static/css/login.css" rel="stylesheet"/>
+<a class="nav-link bg-dark center" aria-current="page" href="{% url 'home' %}">Back To Metagaming</a>
+
+
+<div class="container">
+  <div class="frame-out">
+      <div ng-app ng-init="checked = false">
+          <form class="form-signin" action="{% url 'account_logout' %}" method="post" name="form">
+              <p class="sign-out">{% trans 'Are you sure you want to sign out?' %}</p>
+              {% csrf_token %} 
+              
+              {% if redirect_field_value %}
+              <input type="hidden" class="form-styling" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <button class="btn btn-primary tn-animate btn-center" type="submit">{% trans "Sign Out" %}</button>
+          </form>
+      </div>   
+  </div> 
+</div>
 
 
 {% endblock %}

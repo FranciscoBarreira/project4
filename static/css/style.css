@@ -11311,6 +11311,10 @@ textarea.form-control-lg {
   
 }
 
+.display  {
+  display:grid;
+}
+
 .display i {
   display: inline;
 }
@@ -11324,3 +11328,4 @@ textarea.form-control-lg {
 .img-circle img{
   border-radius: 50%;
 }
+
