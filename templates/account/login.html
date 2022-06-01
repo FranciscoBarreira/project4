@@ -17,6 +17,7 @@
   <div class="frame">
       <div ng-app ng-init="checked = false">
           <form class="form-signin" action="{% url 'account_login' %}" method="post" name="form">
+              <p class="login-txt">{% blocktrans %}Don't have an account yet? Then please <a href="{{ signup_url }}" class="link">sign up</a>.{% endblocktrans %}</p>
               {% csrf_token %} 
               {{ form.as_p }}
               {% if redirect_field_value %}
