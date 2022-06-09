@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+       <div class="col-8 offset-2 text-center mt-5">
+          <h2>Results for '{{searched}}'</h2>
+          <hr>
+       </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                {% for post in page_obj %}
+                <div class="col-lg-6">
+                    <!-- Blog posts-->
+                    <a href="{% url 'post_detail' post.slug %}" class="text-decoration-none text-reset">
+                    <div class="card mb-4">
+                        {% if "placeholder" in post.post_image.url %}
+                        <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
+                        {% else %}
+                        <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
+                        {% endif %}
+                        <div class="card-body">
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
+                            <div class="small text-muted">{{ post.author }}, {{ post.created_on}}</div>
+                            <h2 class="card-title h4">{{ post.title }}</h2>
+                            <p class="card-text">{{ post.excerpt }}</p>
+                            <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% empty %}
+                    <div class="container">
+                       <div class="row justify-content-md-center">
+                          <div class="col-md-8 offset-2 mt-4">
+                              <h2>No Results</h2>
+                              <p class="lead">Sorry, we couldn't find any posts with '{{ searched }}' in the title.</p>
+                          </div>
+                       </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>                
+
+{% endblock %}

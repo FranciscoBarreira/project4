@@ -15,7 +15,7 @@
                     <!-- Post title-->
                     <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
                     <!-- Post meta content-->
-                    <div class="text-muted fst-italic mb-2">Posted by{{ post.author }}, on {{ post.created_on}}</div>
+                    <div class="text-muted fst-italic mb-2">Posted by <span class="user-txt">{{ post.author }}</span>, on {{ post.created_on}}</div>
                     <!-- Post categories-->
                     <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
                     <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.author}}</a>
@@ -82,7 +82,7 @@
                         </div>
                         {% else %}
                         {% if user.is_authenticated%}
-                                <form class="mb-4" method="post">Share Your Thoughts With Us,<span class="txt-comment"> {{ user.username }}!</span>
+                                <form class="mb-4" method="post">Share Your Thoughts With Us,<span class="user-txt"> {{ user.username }}!</span>
                         {{ comment_form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary" style="margin-top: 1.3em;">Submit</button>

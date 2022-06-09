@@ -59,7 +59,7 @@
                                 {% endif %}
                                 <div class="card-body">
                                     <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
-                                    <div class="small text-muted">{{ post.author }}, {{ post.created_on}}</div>
+                                    <div class="small text-muted"><span class="user-txt">{{ post.author }}</span>, {{ post.created_on}}</div>
                                     <h2 class="card-title h4">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                     <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
@@ -77,8 +77,11 @@
                         <div class="card-header">Search</div>
                         <div class="card-body">
                             <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                                <form method="post" action="{% url 'search' %}" class="d-flex">
+                                    {% csrf_token %}
+                                    <input  name="searched" class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                    <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+                                </form>
                             </div>
                         </div>
                     </div>

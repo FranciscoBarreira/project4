@@ -3,6 +3,8 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
+from django.core.paginator import Paginator
+
 
 class PostList(generic.ListView):
     model = Post
@@ -91,3 +93,24 @@ class Downvote(View):
             post.downvotes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+class SearchPost(View):
+    """ Search for posts on the blog"""
+
+    def get(self, request):
+        
+        return render(request, 'search.html')
+
+    def post(self, request):
+       
+        searched = request.POST.get('searched')
+        post = Post.objects.filter(title__icontains=searched)
+        '''post_cat = post.objects.filter(category__icontains=searched)'''
+        paginator = Paginator(post, 6)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context = {
+            'page_obj': page_obj,
+            'searched': searched
+        }
+        return render(request, 'search.html', context)        
