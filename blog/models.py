@@ -4,6 +4,15 @@ from cloudinary.models import CloudinaryField
 
 POST_STATUS = ((0, "Draft"), (1, "Published"))
 
+R = 'Reviews'
+A = 'Announcements'
+N = 'News'
+O = 'Opinion'
+P = 'Previews'
+S = 'Streaming'
+T = 'Tech'
+M = 'Miscellaneous'
+
 CATEGORY_OPTIONS = (
     ('R', 'Reviews'),
     ('A', 'Announcements'),
@@ -23,7 +32,7 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, 
                                related_name="blog_posts")
-    category = models.CharField(max_length=4, choices=CATEGORY_OPTIONS) 
+    category = models.CharField(max_length=30, choices=CATEGORY_OPTIONS) 
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     body = models.TextField()

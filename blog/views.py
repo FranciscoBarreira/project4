@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 
 class PostList(generic.ListView):
@@ -104,8 +105,10 @@ class SearchPost(View):
     def post(self, request):
        
         searched = request.POST.get('searched')
-        post = Post.objects.filter(title__icontains=searched)
-        '''post_cat = post.objects.filter(category__icontains=searched)'''
+        post = Post.objects.filter(Q(title__icontains=searched)
+         | Q(category=['R', 'A', 'N', 'O',
+           'P', 'S', 'T', 'M']))
+        
         paginator = Paginator(post, 6)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
