@@ -1,116 +1,115 @@
 {% extends "base.html" %}
 
 {% block content %}
-        <!-- Page content-->
-        <div class="container">
-            <div class="row">
-                <!-- Blog entries-->
-                <div class="col-lg-8">
-                    <!-- Featured blog post-->
-                    <div class="card mb-4">
-                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <img src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                  <h5>Level Up Today</h5>
-                                  <p>Sign up and become part of the Metagaming community</p>
-                                </div>
-                              </div>
-                              {% for post in post_list|slice:":2" %}
-                              <div class="carousel-item">
-                                {% if "placeholder" in post.post_image.url %}
-                                <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
-                                {% else %}
-                                <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
-                                {% endif %}
-                                <div class="carousel-caption d-none d-md-block">
-                                  <h5>{{ post.title }}</h5>
-                                  <p>{{ post.excerpt }}</p>
-                                </div>
-                              </div>
-                              {% endfor %}
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
-                          </div>
+<!-- Page content-->
+<div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
+            <!-- Featured blog post-->
+            <div class="card mb-4">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <!--blog posts-->
-                    <div class="row">
-                        {% for post in post_list %}
-                        <div class="col-lg-6">
-                            <!-- Blog post-->
-                            <div class="card mb-4">
-                                {% if "placeholder" in post.post_image.url %}
-                                <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
-                                {% else %}
-                                <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
-                                {% endif %}
-                                <div class="card-body">
-                                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
-                                    <div class="small text-muted"><span class="user-txt">{{ post.author }}</span>, {{ post.created_on}}</div>
-                                    <h2 class="card-title h4">{{ post.title }}</h2>
-                                    <p class="card-text">{{ post.excerpt }}</p>
-                                    <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
-                                </div>
-                            </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Level Up Today</h5>
+                            <p>Sign up and become part of the Metagaming community</p>
+                        </div>
+                        </div>
+                        {% for post in post_list|slice:":2" %}
+                        <div class="carousel-item">
+                        {% if "placeholder" in post.post_image.url %}
+                        <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
+                        {% else %}
+                        <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
+                        {% endif %}
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ post.title }}</h5>
+                            <p>{{ post.excerpt }}</p>
+                        </div>
                         </div>
                         {% endfor %}
-                          
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!--blog posts-->
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-lg-6">
+                    <!-- Blog post-->
+                    <div class="card mb-4">
+                        {% if "placeholder" in post.post_image.url %}
+                        <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
+                        {% else %}
+                        <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
+                        {% endif %}
+                        <div class="card-body">
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
+                            <div class="small text-muted"><span class="user-txt">{{ post.author }}</span>, {{ post.created_on}}</div>
+                            <h2 class="card-title h4">{{ post.title }}</h2>
+                            <p class="card-text">{{ post.excerpt }}</p>
+                            <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
+                        </div>
                     </div>
                 </div>
-                <!-- Side widgets-->
-                <div class="col-lg-4">
-                    <!-- Search widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Search</div>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <form method="post" action="{% url 'search' %}" class="d-flex">
-                                    {% csrf_token %}
-                                    <input  name="searched" class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                    <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
-                                </form>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            <!-- Search widget-->
+            <div class="card mb-4">
+                <div class="card-header">Search</div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <form method="post" action="{% url 'search' %}" class="d-flex">
+                            {% csrf_token %}
+                            <input  name="searched" class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Categories widget-->
+            <div class="card mb-4">
+                <div class="card-header">Upcoming Events</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="https://www.eventsforgamers.com/event/gacucon-2022/" target="_blank">Gagucon 2022</a></li>
+                                    <li><a href="https://www.eventsforgamers.com/event/big-festival-2022-online/" target="_blank">Big Festival</a></li>
+                                    <li><a href="https://expo.nikkeibp.co.jp/tgs/2021/en/" target="_blank">Tokyo GS</a></li>
+                                    <li><a href="https://www.egx.net/london/en-gb.html" target="_blank">EGX London</a></li>
+                                </ul>
                             </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="https://www.eventsforgamers.com/event/fxp-festival-2022-hybrid/" target="_blank">FXP Festival</a></li>
+                                    <li><a href="https://www.eventsforgamers.com/event/gaming-by-sea-summer-2022/" target="_blank">Gaming By Sea</a></li>
+                                    <li><a href="https://www.eventsforgamers.com/event/develop-brighton-2022/" target="_blank">Develop Brighton</a></li>
+                                    <li><a href="https://www.gamescom.global/en" target="_blank">Gamescon</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- Categories widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Categories</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <ul class="list-unstyled mb-0">
-                                            <li><a href="{% url 'home' %}?category=News">Announcements</a></li>
-                                            <li><a href="#!">News</a></li>
-                                            <li><a href="#!">Opinion</a></li>
-                                            <li><a href="#!">Previews</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <ul class="list-unstyled mb-0">
-                                            <li><a href="#!">Streaming</a></li>
-                                            <li><a href="#!">Reviews</a></li>
-                                            <li><a href="#!">Tech</a></li>
-                                            <li><a href="#!">Miscellaneous</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Side widget 2-->
+                </div>
+            </div>
+            <!-- Games Widget-->
             <div class="card mb-4">
                 <div class="card-header">Recommended Games</div>
                 <div class="card-body">
@@ -157,19 +156,7 @@
                     </div>
                 </div>
             </div>
-            
-            {% if is_paginated %}
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                    {% endif %}
-                    {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        
-                    {% endif %}
-                </ul>
-            </nav>
-            {% endif %}
-        </div>
+        </div>    
+    </div>
+</div>     
 {%endblock%}

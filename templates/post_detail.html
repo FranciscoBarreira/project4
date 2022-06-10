@@ -115,36 +115,40 @@
                 <div class="card-header">Search</div>
                 <div class="card-body">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                        <form method="post" action="{% url 'search' %}" class="d-flex">
+                            {% csrf_token %}
+                            <input  name="searched" class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+                        </form>
                     </div>
                 </div>
             </div>
             <!-- Categories widget-->
             <div class="card mb-4">
-                <div class="card-header">Categories</div>
+                <div class="card-header">Upcoming Events</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0">
-                                <li><a href="#!">Annoucements</a></li>
-                                <li><a href="#!">News</a></li>
-                                <li><a href="#!">Opinion</a></li>
-                                <li><a href="#!">Previews</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#!">Streaming</a></li>
-                                <li><a href="#!">Reviews</a></li>
-                                <li><a href="#!">Tech</a></li>
-                                <li><a href="#!">Miscellaneous</a></li>
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="https://www.eventsforgamers.com/event/gacucon-2022/" target="_blank">Gagucon 2022</a></li>
+                                    <li><a href="https://www.eventsforgamers.com/event/big-festival-2022-online/" target="_blank">Big Festival</a></li>
+                                    <li><a href="https://expo.nikkeibp.co.jp/tgs/2021/en/" target="_blank">Tokyo GS</a></li>
+                                    <li><a href="https://www.egx.net/london/en-gb.html" target="_blank">EGX London</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="https://www.eventsforgamers.com/event/fxp-festival-2022-hybrid/" target="_blank">FXP Festival</a></li>
+                                    <li><a href="https://www.eventsforgamers.com/event/gaming-by-sea-summer-2022/" target="_blank">Gaming By Sea</a></li>
+                                    <li><a href="https://www.eventsforgamers.com/event/develop-brighton-2022/" target="_blank">Develop Brighton</a></li>
+                                    <li><a href="https://www.gamescom.global/en" target="_blank">Gamescon</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Side widget 2-->
+            <!-- Games Widget-->
             <div class="card mb-4">
                 <div class="card-header">Recommended Games</div>
                 <div class="card-body">
@@ -191,7 +195,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
     </div>
-</div>
+</div>     
 {%endblock%}

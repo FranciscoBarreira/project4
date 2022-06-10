@@ -106,8 +106,7 @@ class SearchPost(View):
        
         searched = request.POST.get('searched')
         post = Post.objects.filter(Q(title__icontains=searched)
-         | Q(category=['R', 'A', 'N', 'O',
-           'P', 'S', 'T', 'M']))
+         | Q(excerpt__icontains=searched))
         
         paginator = Paginator(post, 6)
         page_number = request.GET.get('page')
