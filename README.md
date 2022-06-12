@@ -111,12 +111,17 @@ All the images used in the blog were taken from other websites, including:
 ### Colour Scheme 
 <a name="colour-scheme"></a>
 
-Apart from background images, the main colours used were goldenrod rgb(218,165,32), white rgb(255,255,255), green rgb(0,128,0) and red rgb(255,0,0). Red and green were used for right or wrong answers. For the containers and backgrounds of both the heading and footer, goldenrod was the colour chosen. White was used as a background color for the answer buttons, and for the text in the rest of the buttons as well as the logo.  
+The colour scheme chosen for the blog were:
+
+- #fff white for text, as it it is a very standard, easy to read colour
+- #212429 grey in the nav-bar, read me more buttons
+- #990099 purple in the widgets, username of the user who posted the article and username in comments when the user is logged in. 
+- #212529 grey for text (slightly different than nav grey as it reads better).
 
 ### Fonts 
 <a name="fonts"></a>
 
-Tittillium Web is used for the headings due to its visual appeal. The rest of the text is in Lato, a font that improves readability.
+Tittillium Web is used for the headings and widgets due to its visual appeal. The rest of the text is in Roboto, a font that improves readability.
 
 ## Technoligies Used
 <a name="technologies-used"></a>
