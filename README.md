@@ -123,7 +123,7 @@ The colour scheme chosen for the blog were:
 
 Tittillium Web is used for the headings and widgets due to its visual appeal. The rest of the text is in Roboto, a font that improves readability.
 
-## Technoligies Used
+## Technologies Used
 <a name="technologies-used"></a>
 
 ------

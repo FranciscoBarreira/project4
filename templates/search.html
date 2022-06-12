@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-       <div class="col-8 offset-2 text-center mt-5">
+       <div class="col-lg-8 offset-2 text-center mt-5">
           <h2>Results for '{{searched}}'</h2>
           <hr>
        </div>
@@ -35,17 +35,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    {% empty %}
-                    <div class="container">
-                       <div class="row justify-content-md-center">
-                          <div class="col-md-8 offset-2 mt-4">
-                              <h2>No Results</h2>
-                              <p class="lead">Sorry, we couldn't find any posts with '{{ searched }}' in the title.</p>
-                          </div>
-                       </div>
+                    <div class="col-lg-6">
+                        {% empty %}
+                        <div class="container">
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-8 offset-2 mt-4">
+                                    <h2>No Results</h2>
+                                    <p class="lead">Sorry, we couldn't find any posts with '{{ searched }}' in the title.</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                     </div>
-                {% endfor %}
-                </div>
+                </div>    
             </div>
         </div>
         <!-- Side widgets-->
