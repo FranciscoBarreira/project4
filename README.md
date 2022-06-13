@@ -128,20 +128,40 @@ Tittillium Web is used for the headings and widgets due to its visual appeal. Th
 
 ------
 
-This site was deployed to GitHub pages. The steps to deploy it were:
-
--HTML for structural design of the website
-
--CSS for styling the pages 
-
--JavaScript for adding functionality to the quiz 
-
--GitHub for software hosting
-
--GitPod for development hosting
 
 
-## Features  
+- HTML
+
+- CSS
+
+- Python
+
+- Django
+
+- GitHub for software hosting
+
+- GitPod for development hosting
+
+- Heroku for project deployment
+
+- Summernote for adding fields to the posts
+
+- Google fonts to add custom fonts to the website
+
+- Font Awesome for icons
+
+- Bootstrap for quick HTML mobile first design
+
+- Cloudinary for online image storage
+
+- W3C CSS Validator to validate CSS
+
+- W3C Markup Validator to validate HTML
+
+- Codebeautify to make HTML and CSS easier to read
+
+
+## features  
 <a name="features"></a>
 ------
 
@@ -195,11 +215,6 @@ All the icons were taken from "Font Awesome".
 ### General Testing
 <a name="general-testing"></a>
 
-Lighthouse was used to test Performance, Accessibility, Best Practices and SEO. The results were the following:
-
-![lighthouse test](/assets/images/lighthouse-test.png "lighthouse test")
-
-The colors and fonts are very easy to read all across the website.
 
 ### Validator Testing
 <a name="validator-testing"></a>

@@ -1,162 +1,203 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <!-- Page content-->
 <div class="container">
-    <div class="row">
-        <!-- Blog entries-->
-        <div class="col-lg-8">
-            <!-- Featured blog post-->
-            <div class="card mb-4">
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Level Up Today</h5>
-                            <p>Sign up and become part of the Metagaming community</p>
-                        </div>
-                        </div>
-                        {% for post in post_list|slice:":2" %}
-                        <div class="carousel-item">
-                        {% if "placeholder" in post.post_image.url %}
-                        <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
-                        {% else %}
-                        <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
-                        {% endif %}
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ post.title }}</h5>
-                            <p>{{ post.excerpt }}</p>
-                        </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <!--blog posts-->
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-lg-6">
-                    <!-- Blog post-->
-                    <div class="card mb-4">
-                        {% if "placeholder" in post.post_image.url %}
-                        <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
-                        {% else %}
-                        <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
-                        {% endif %}
-                        <div class="card-body">
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
-                            <div class="small text-muted"><span class="user-txt">{{ post.author }}</span>, {{ post.created_on}}</div>
-                            <h2 class="card-title h4">{{ post.title }}</h2>
-                            <p class="card-text">{{ post.excerpt }}</p>
-                            <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+  <div class="row">
+    <!-- Blog entries-->
+    <div class="col-lg-8">
+      <!-- Featured blog post-->
+      <div class="card mb-4">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" class="d-block w-100" alt="placeholder-image">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Level Up Today</h5>
+                <p>Sign up and become part of the Metagaming community</p>
+              </div>
+            </div> {% for post in post_list|slice:":2" %} <div class="carousel-item"> {% if "placeholder" in post.post_image.url %} <a href="{% url 'post_detail' post.slug  %}">
+                <img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="placeholder-image" />
+              </a> {% else %} <a href="{% url 'post_detail' post.slug  %}">
+                <img class="card-img-top" src="{{ post.post_image.url }}" />
+              </a> {% endif %} <div class="carousel-caption d-none d-md-block">
+                <h5>{{ post.title }}</h5>
+                <p>{{ post.excerpt }}</p>
+              </div>
+            </div> {% endfor %}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <!-- Side widgets-->
-        <div class="col-lg-4">
-            <!-- Search widget-->
-            <div class="card mb-4">
-                <div class="card-header">Search</div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <form method="post" action="{% url 'search' %}" class="d-flex">
-                            {% csrf_token %}
-                            <input  name="searched" class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                            <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
-                        </form>
-                    </div>
-                </div>
+      </div>
+      <!--blog posts-->
+      <div class="row"> {% for post in post_list %} <div class="col-lg-6">
+          <!-- Blog post-->
+          <div class="card mb-4"> {% if "placeholder" in post.post_image.url %} <a href="{% url 'post_detail' post.slug  %}">
+              <img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="placeholder-image" />
+            </a> {% else %} <a href="{% url 'post_detail' post.slug  %}">
+              <img class="card-img-top" src="{{ post.post_image.url }}" />
+            </a> {% endif %} <div class="card-body">
+              <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>
+              <div class="small text-muted">
+                <span class="user-txt">{{ post.author }}</span>, {{ post.created_on}}
+              </div>
+              <h2 class="card-title h4">{{ post.title }}</h2>
+              <p class="card-text">{{ post.excerpt }}</p>
+              <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
             </div>
-            <!-- Categories widget-->
-            <div class="card mb-4">
-                <div class="card-header">Upcoming Events</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="https://www.eventsforgamers.com/event/gacucon-2022/" target="_blank">Gagucon 2022</a></li>
-                                    <li><a href="https://www.eventsforgamers.com/event/big-festival-2022-online/" target="_blank">Big Festival</a></li>
-                                    <li><a href="https://expo.nikkeibp.co.jp/tgs/2021/en/" target="_blank">Tokyo GS</a></li>
-                                    <li><a href="https://www.egx.net/london/en-gb.html" target="_blank">EGX London</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="https://www.eventsforgamers.com/event/fxp-festival-2022-hybrid/" target="_blank">FXP Festival</a></li>
-                                    <li><a href="https://www.eventsforgamers.com/event/gaming-by-sea-summer-2022/" target="_blank">Gaming By Sea</a></li>
-                                    <li><a href="https://www.eventsforgamers.com/event/develop-brighton-2022/" target="_blank">Develop Brighton</a></li>
-                                    <li><a href="https://www.gamescom.global/en" target="_blank">Gamescon</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Games Widget-->
-            <div class="card mb-4">
-                <div class="card-header">Recommended Games</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="https://www.ea.com/games/apex-legends" target ='_blank'>Apex Legends</a></li>
-                                <li><a href="https://en.bandainamcoent.eu/elden-ring/elden-ring" target ='_blank'>Elden Ring</a></li>
-                                <li><a href="https://www.gran-turismo.com/" target ='_blank'>Gran Turismo 7</a></li>
-                                <li><a href="https://genshin.hoyoverse.com/" target ='_blank'>Genshi Impact</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="https://www.rockstargames.com/gta-v" target ='_blank'>GTA V</a></li>
-                                <li><a href="https://quarrygame.2k.com/" target ='_blank'>The Quarry</a></li>
-                                <li><a href="https://playvalorant.com/en-us/" target ='_blank'>Valorant</a></li>
-                                <li><a href="https://www.callofduty.com/warzone" target ='_blank'>Warzone</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-header">Recommended Streamers</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li class="img-circle"><img src="/static/media/images/fuslie.png" height="25px" width="25px"><a href="https://www.twitch.tv/fuslie" target ='_blank'>Fuslie</a></li>
-                                <li class="img-circle"><img src="/static/media/images/jarnoopmeer.png" height="25px" width="25px"><a href="https://www.twitch.tv/jarnoopmeer" target ='_blank'>JarnoOpmeer</a></li>
-                                <li class="img-circle"><img src="/static/media/images/kyedae.png" height="25px" width="25px"><a href="https://www.twitch.tv/kyedae" target ='_blank'>Kyedae</a></li>
-                                <li class="img-circle"><img src="/static/media/images/tyler1.png" height="25px" width="25px"><a href="https://www.twitch.tv/loltyler1" target ='_blank'>LolTyler1</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li class="img-circle"><img src="/static/media/images/nickmercs.png" height="25px" width="25px"><a href="https://www.twitch.tv/nickmercs" target ='_blank'>NickMercs</a></li>
-                                <li class="img-circle"><img src="/static/media/images/timthetatman.jpg" height="25px" width="25px"><a href="https://www.youtube.com/user/timthetatman" target ='_blank'>TimTheTatMan</a></li>
-                                <li class="img-circle"><img src="/static/media/images/valkyrae.jpg" height="25px" width="25px"><a href="https://www.youtube.com/c/Valkyrae1" target ='_blank'>Valkyrae</a></li>
-                                <li class="img-circle"><img src="/static/media/images/xqc.jpeg" height="25px" width="25px"><a href="https://www.twitch.tv/xqc" target ='_blank'>XQC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
+          </div>
+        </div> {% endfor %} </div>
     </div>
-</div>     
-{%endblock%}
+    <!-- Side widgets-->
+    <div class="col-lg-4">
+      <!-- Search widget-->
+      <div class="card mb-4">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+          <div class="input-group">
+            <form method="post" action="{% url 'search' %}" class="d-flex"> {% csrf_token %} <input name="searched" class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+              <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Categories widget-->
+      <div class="card mb-4">
+        <div class="card-header">Upcoming Events</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="https://www.eventsforgamers.com/event/gacucon-2022/" target="_blank">Gagucon 2022</a>
+                  </li>
+                  <li>
+                    <a href="https://www.eventsforgamers.com/event/big-festival-2022-online/" target="_blank">Big Festival</a>
+                  </li>
+                  <li>
+                    <a href="https://expo.nikkeibp.co.jp/tgs/2021/en/" target="_blank">Tokyo GS</a>
+                  </li>
+                  <li>
+                    <a href="https://www.egx.net/london/en-gb.html" target="_blank">EGX London</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="https://www.eventsforgamers.com/event/fxp-festival-2022-hybrid/" target="_blank">FXP Festival</a>
+                </li>
+                <li>
+                  <a href="https://www.eventsforgamers.com/event/gaming-by-sea-summer-2022/" target="_blank">Gaming By Sea</a>
+                </li>
+                <li>
+                  <a href="https://www.eventsforgamers.com/event/develop-brighton-2022/" target="_blank">Develop Brighton</a>
+                </li>
+                <li>
+                  <a href="https://www.gamescom.global/en" target="_blank">Gamescon</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Games Widget-->
+      <div class="card mb-4">
+        <div class="card-header">Recommended Games</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="https://www.ea.com/games/apex-legends" target='_blank'>Apex Legends</a>
+                </li>
+                <li>
+                  <a href="https://en.bandainamcoent.eu/elden-ring/elden-ring" target='_blank'>Elden Ring</a>
+                </li>
+                <li>
+                  <a href="https://www.gran-turismo.com/" target='_blank'>Gran Turismo 7</a>
+                </li>
+                <li>
+                  <a href="https://genshin.hoyoverse.com/" target='_blank'>Genshi Impact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="https://www.rockstargames.com/gta-v" target='_blank'>GTA V</a>
+                </li>
+                <li>
+                  <a href="https://quarrygame.2k.com/" target='_blank'>The Quarry</a>
+                </li>
+                <li>
+                  <a href="https://playvalorant.com/en-us/" target='_blank'>Valorant</a>
+                </li>
+                <li>
+                  <a href="https://www.callofduty.com/warzone" target='_blank'>Warzone</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-header">Recommended Streamers</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li class="img-circle">
+                  <img src="/static/media/images/fuslie.png" height="25" width="25" alt="fuslie">
+                  <a href="https://www.twitch.tv/fuslie" target='_blank'>Fuslie</a>
+                </li>
+                <li class="img-circle">
+                  <img src="/static/media/images/jarnoopmeer.png" height="25" width="25" alt="Jarnoopmeer">
+                  <a href="https://www.twitch.tv/jarnoopmeer" target='_blank'>JarnoOpmeer</a>
+                </li>
+                <li class="img-circle">
+                  <img src="/static/media/images/kyedae.png" height="25" width="25" alt="Kyedae">
+                  <a href="https://www.twitch.tv/kyedae" target='_blank'>Kyedae</a>
+                </li>
+                <li class="img-circle">
+                  <img src="/static/media/images/tyler1.png" height="25" width="25" alt="LolTyler1">
+                  <a href="https://www.twitch.tv/loltyler1" target='_blank'>LolTyler1</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li class="img-circle">
+                  <img src="/static/media/images/nickmercs.png" height="25" width="25" alt="NickMercs">
+                  <a href="https://www.twitch.tv/nickmercs" target='_blank'>NickMercs</a>
+                </li>
+                <li class="img-circle">
+                  <img src="/static/media/images/timthetatman.jpg" height="25" width="25" alt="TimTheTatMan">
+                  <a href="https://www.youtube.com/user/timthetatman" target='_blank'>TimTheTatMan</a>
+                </li>
+                <li class="img-circle">
+                  <img src="/static/media/images/valkyrae.jpg" height="25" width="25" alt="Valkyrae">
+                  <a href="https://www.youtube.com/c/Valkyrae1" target='_blank'>Valkyrae</a>
+                </li>
+                <li class="img-circle">
+                  <img src="/static/media/images/xqc.jpeg" height="25" width="25" alt="XQC">
+                  <a href="https://www.twitch.tv/xqc" target='_blank'>XQC</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> {%endblock%}

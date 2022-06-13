@@ -18,12 +18,12 @@
                 {% for post in page_obj %}
                 <div class="col-lg-6">
                     <!-- Blog posts-->
-                    <a href="{% url 'post_detail' post.slug %}" class="text-decoration-none text-reset">
+                    <a href="{% url 'post_detail' post.slug %}" class="text-decoration-none text-reset"></a>
                     <div class="card mb-4">
                         {% if "placeholder" in post.post_image.url %}
-                        <a href="#!"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." /></a>
+                        <a href="{% url 'post_detail' post.slug  %}"><img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="placeholder-image" /></a>
                         {% else %}
-                        <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
+                        <a href="{% url 'post_detail' post.slug  %}"><img class="card-img-top" src="{{ post.post_image.url }}"/></a>
                         {% endif %}
                         <div class="card-body">
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{post.get_category_display}}</a>

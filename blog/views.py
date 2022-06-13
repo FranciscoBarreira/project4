@@ -13,6 +13,7 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 6
 
+
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -76,7 +77,7 @@ class PostDetail(View):
 
 
 class Upvote(View):
-   def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.upvotes.filter(id=request.user.id).exists():
             post.upvotes.remove(request.user)
@@ -85,8 +86,9 @@ class Upvote(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 class Downvote(View):
-   def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.downvotes.filter(id=request.user.id).exists():
             post.downvotes.remove(request.user)
@@ -94,6 +96,7 @@ class Downvote(View):
             post.downvotes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 class SearchPost(View):
     """ Search for posts on the blog"""
@@ -106,7 +109,7 @@ class SearchPost(View):
        
         searched = request.POST.get('searched')
         post = Post.objects.filter(Q(title__icontains=searched)
-         | Q(excerpt__icontains=searched))
+                                   | Q(excerpt__icontains=searched))
         
         paginator = Paginator(post, 6)
         page_number = request.GET.get('page')

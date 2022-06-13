@@ -22,7 +22,7 @@
                 </header>
                 <!-- Preview image figure-->
                 {% if "placeholder" in post.post_image.url %}
-                <img class="img-fluid rounded" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="..." />
+                <img class="img-fluid rounded" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="placeholder-image" />
                 {% else %}
                 <img class="img-fluid rounded" src="{{ post.post_image.url }}"/>
                 {% endif %}
@@ -65,10 +65,8 @@
                             <span class="text-secondary display">{{ post.number_of_downvotes }}</span>
                         </div>
                         
-                    </div>
-                    <!--<div class="col-1">
-                        <strong class="text-secondary"><i class="fa fa-arrow-down"></i> {{ post.number_of_downvotes }} </strong>
-                    </div>-->    
+                    </div> 
+                </div>    
             </article>
             <!-- Comments section-->
             <section class="mb-5">
@@ -130,20 +128,19 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="https://www.eventsforgamers.com/event/gacucon-2022/" target="_blank">Gagucon 2022</a></li>
-                                    <li><a href="https://www.eventsforgamers.com/event/big-festival-2022-online/" target="_blank">Big Festival</a></li>
-                                    <li><a href="https://expo.nikkeibp.co.jp/tgs/2021/en/" target="_blank">Tokyo GS</a></li>
-                                    <li><a href="https://www.egx.net/london/en-gb.html" target="_blank">EGX London</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="https://www.eventsforgamers.com/event/fxp-festival-2022-hybrid/" target="_blank">FXP Festival</a></li>
-                                    <li><a href="https://www.eventsforgamers.com/event/gaming-by-sea-summer-2022/" target="_blank">Gaming By Sea</a></li>
-                                    <li><a href="https://www.eventsforgamers.com/event/develop-brighton-2022/" target="_blank">Develop Brighton</a></li>
-                                    <li><a href="https://www.gamescom.global/en" target="_blank">Gamescon</a></li>
+                                <li><a href="https://www.eventsforgamers.com/event/gacucon-2022/" target="_blank">Gagucon 2022</a></li>
+                                <li><a href="https://www.eventsforgamers.com/event/big-festival-2022-online/" target="_blank">Big Festival</a></li>
+                                <li><a href="https://expo.nikkeibp.co.jp/tgs/2021/en/" target="_blank">Tokyo GS</a></li>
+                                <li><a href="https://www.egx.net/london/en-gb.html" target="_blank">EGX London</a></li>
                             </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="https://www.eventsforgamers.com/event/fxp-festival-2022-hybrid/" target="_blank">FXP Festival</a></li>
+                                <li><a href="https://www.eventsforgamers.com/event/gaming-by-sea-summer-2022/" target="_blank">Gaming By Sea</a></li>
+                                <li><a href="https://www.eventsforgamers.com/event/develop-brighton-2022/" target="_blank">Develop Brighton</a></li>
+                                <li><a href="https://www.gamescom.global/en" target="_blank">Gamescon</a></li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -178,18 +175,18 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0">
-                                <li class="img-circle"><img src="/static/media/images/fuslie.png" height="25px" width="25px"><a href="https://www.twitch.tv/fuslie" target ='_blank'>Fuslie</a></li>
-                                <li class="img-circle"><img src="/static/media/images/jarnoopmeer.png" height="25px" width="25px"><a href="https://www.twitch.tv/jarnoopmeer" target ='_blank'>JarnoOpmeer</a></li>
-                                <li class="img-circle"><img src="/static/media/images/kyedae.png" height="25px" width="25px"><a href="https://www.twitch.tv/kyedae" target ='_blank'>Kyedae</a></li>
-                                <li class="img-circle"><img src="/static/media/images/tyler1.png" height="25px" width="25px"><a href="https://www.twitch.tv/loltyler1" target ='_blank'>LolTyler1</a></li>
+                                <li class="img-circle"><img src="/static/media/images/fuslie.png" height="25" width="25" alt="Fuslie"><a href="https://www.twitch.tv/fuslie" target ='_blank'>Fuslie</a></li>
+                                <li class="img-circle"><img src="/static/media/images/jarnoopmeer.png" height="25" width="25" alt="JarnoOpmeer"><a href="https://www.twitch.tv/jarnoopmeer" target ='_blank'>JarnoOpmeer</a></li>
+                                <li class="img-circle"><img src="/static/media/images/kyedae.png" height="25" width="25" alt="Kyedae"><a href="https://www.twitch.tv/kyedae" target ='_blank'>Kyedae</a></li>
+                                <li class="img-circle"><img src="/static/media/images/tyler1.png" height="25" width="25" alt="LolTyler1"><a href="https://www.twitch.tv/loltyler1" target ='_blank'>LolTyler1</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0">
-                                <li class="img-circle"><img src="/static/media/images/nickmercs.png" height="25px" width="25px"><a href="https://www.twitch.tv/nickmercs" target ='_blank'>NickMercs</a></li>
-                                <li class="img-circle"><img src="/static/media/images/timthetatman.jpg" height="25px" width="25px"><a href="https://www.youtube.com/user/timthetatman" target ='_blank'>TimTheTatMan</a></li>
-                                <li class="img-circle"><img src="/static/media/images/valkyrae.jpg" height="25px" width="25px"><a href="https://www.youtube.com/c/Valkyrae1" target ='_blank'>Valkyrae</a></li>
-                                <li class="img-circle"><img src="/static/media/images/xqc.jpeg" height="25px" width="25px"><a href="https://www.twitch.tv/xqc" target ='_blank'>XQC</a></li>
+                                <li class="img-circle"><img src="/static/media/images/nickmercs.png" height="25" width="25" alt="NickMercs"><a href="https://www.twitch.tv/nickmercs" target ='_blank'>NickMercs</a></li>
+                                <li class="img-circle"><img src="/static/media/images/timthetatman.jpg" height="25" width="25" alt="TimTheTatMan"><a href="https://www.youtube.com/user/timthetatman" target ='_blank'>TimTheTatMan</a></li>
+                                <li class="img-circle"><img src="/static/media/images/valkyrae.jpg" height="25" width="25" alt="valkyrae"><a href="https://www.youtube.com/c/Valkyrae1" target ='_blank'>Valkyrae</a></li>
+                                <li class="img-circle"><img src="/static/media/images/xqc.jpeg" height="25" width="25" alt="XQC"><a href="https://www.twitch.tv/xqc" target ='_blank'>XQC</a></li>
                             </ul>
                         </div>
                     </div>
