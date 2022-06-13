@@ -29,7 +29,7 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 
 [Features](#features)   
 
-   - [Logo](#logo)
+   - [Top Page](#top-page)
    - [Page Image](#page-image) 
    - [Quiz Section](#quiz-section)
    - [End Results Section](#ending-results-section)
@@ -165,10 +165,10 @@ Tittillium Web is used for the headings and widgets due to its visual appeal. Th
 <a name="features"></a>
 ------
 
-### Logo
-<a name="logo"></a>
+### Top Page
+<a name="top-page"></a>
   
-At the top of the page lies the heading containing the Test Your Movie Knowledge logo. It is a constant in every page and serves the purpose of maintaining visual consistency.
+At the top of the page lies there is a short 
 
 ![logo image](/assets/images/home-quiz.png "logo")
 
