@@ -48,7 +48,8 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 [Credits](#credits)   
 
    - [Media](#media)
-   - [Content](#content) 
+   - [Content](#content)
+   - [Acknowledgements](#acknowledgements)  
   
 
 
@@ -287,7 +288,12 @@ This site was deployed to GitHub pages. The steps to deploy it were:
 ### Media
 <a name="media"></a>
 
-The background image used in the website was taken directly from Unsplash.com.
+All the images used in the blog were taken from other websites, including:
+
+- Google images for all the images in the posts, the Metagaming page header and placeholder image.
+- Twitch.tv for the images in the recommended streamer widget.
+
+I do understand that it is better to use sites such as unsplash for images, but given the highly specific nature of the images required I decided to use google images.
 
 All the icons were taken from "Font Awesome".
 
@@ -296,6 +302,20 @@ All the icons were taken from "Font Awesome".
 
 For this project, the following sources of information were used:
 
--Stackoverflow and w3schools for various code related doubts
+- Stackoverflow for various code related doubts
 
--The idea for the increment score functions was initially taken from the Love Math walkthrough project.
+- Django documentation for ideas on how to make ideas come true
+
+- All the post content was taken from IGN.com, Gamespot.com and Destructoid.com
+
+- The I think, therefore I do project for helping with login and pagination.
+
+
+### Acknowledgements
+ <a name="acknowledgements"></a>
+
+ I want to thank the following people for helping me with this project:
+
+ - My mentor, Akshat Garg, for helping me go in the right direction
+
+ - The tutors at CodeInstitute for helping me sort small issues with the blog.
