@@ -320,15 +320,26 @@ This blog was designed with the help of bootstrap, which is a mobile first desig
 
 ------
 
-This site was deployed to GitHub pages. The steps to deploy it were:
+The Metagaming repository was created on GitHub by following these steps:
 
--In the GitHub repository, click on on settings 
+- Select the Code Institute template
 
--Scroll down to Github pages
+- Click create new repository after naming it 
 
--From the source section drop-down menu, select Main 
+- Click on the green Gitpod button to create the workspace
 
--After all these steps are followed successfully the page will refresh and provide a link to the deployed website.
+
+This site was deployed to Heroku. The steps to deploy it were:
+
+- Create new app and name it 
+
+- Click settings to set config vars, including DISABLE_COLLECTSTATIC=1 while DEBUG=TRUE
+
+- Click on resources and add Heroku-postgres
+
+- Under Deploy, connect the app to the Github repository
+
+- Under Manual Deploy, click Deploy Branch
 
 
 
