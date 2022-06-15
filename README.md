@@ -224,6 +224,19 @@ This blog contains 3 authentication related pages: login, sign up and sign out. 
 ### General Testing
 <a name="general-testing"></a>
 
+- Nav Bar: When a user is logged in, Home and Sign Out appears on the nav bar as opposed to Home, Sign In and Sign Up.
+
+![non-authenticated image](/static/media/images/nav.png "non-authenticated")
+![authenticated image](/static/media/images/nav2.png "authenticated")
+
+- Comment Section and Upvotes/Downvotes: When a user is authenticated, they can comment and upvote/downvote the post. For those who are not, the comments and upvotes/downvotes still appear, but in an non-interactive way(see image below).  
+
+![non-authenticated comment/upvote/downvote image](/static/media/images/comment-signout.png "non-authenticated comment/upvote/downvote")
+
+- In this scenario, the user is logged in and has both upvoted and downvoted the post(for testing purposes), which is why both buttons have a red background. 
+
+![authenticated comment/upvote/downvote image](/static/media/images/comment.png "authenticated comment/upvote/downvote")
+
 
 ### Validator Testing
 <a name="validator-testing"></a>
@@ -232,9 +245,6 @@ HTML- No errors were shown when put through the [HTML Validator](https://validat
 
 CSS- No errors were shown when put through the [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ffranciscobarreira.github.io%2Fjavascript-project%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pt-BR)
 
-JavaScript - No errors were shown when put through JShint validator, as shown in the image below.
-
-![jshint test](/assets/images/jshint.png "jshint test")
 
 ### Responsiveness Testing
 <a name="responsiveness-testing"></a>

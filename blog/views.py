@@ -71,7 +71,7 @@ class PostDetail(View):
                 "commented": True,
                 "upvoted": upvoted,
                 "downvoted": downvoted,
-                "comment": CommentForm()
+                "comment_form": comment_form
             },
         )
 
