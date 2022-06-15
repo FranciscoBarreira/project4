@@ -40,7 +40,9 @@
         </div>
       </div>
       <!--blog posts-->
-      <div class="row"> {% for post in post_list %} <div class="col-lg-6">
+      <div class="row">
+        {% for post in post_list %} 
+        <div class="col-lg-6">
           <!-- Blog post-->
           <div class="card mb-4"> {% if "placeholder" in post.post_image.url %} <a href="{% url 'post_detail' post.slug  %}">
               <img class="card-img-top" src="https://res.cloudinary.com/fb44/image/upload/v1652192604/placeholder_dovjbu.jpg" alt="placeholder-image" />

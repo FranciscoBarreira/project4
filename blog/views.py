@@ -111,11 +111,19 @@ class SearchPost(View):
         post = Post.objects.filter(Q(title__icontains=searched)
                                    | Q(excerpt__icontains=searched))
         
-        paginator = Paginator(post, 6)
-        page_number = request.GET.get('page')
-        page_obj = paginator.get_page(page_number)
         context = {
-            'page_obj': page_obj,
-            'searched': searched
+                'searched': searched
         }
-        return render(request, 'search.html', context)        
+        if(searched):
+            paginator = Paginator(post, 4)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            print(page_obj)
+            context = {
+                'page_obj': page_obj,
+                'searched': searched
+            }
+            return render(request, 'search.html', context)     
+        else:
+            return render(request, 'search.html', context)  
+           
