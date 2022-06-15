@@ -30,10 +30,11 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 [Features](#features)   
 
    - [Top Page](#top-page)
-   - [Page Image](#page-image) 
-   - [Quiz Section](#quiz-section)
-   - [End Results Section](#ending-results-section)
-   - [Footer](#footer)  
+   - [Carousel](#carousel) 
+   - [Blog Posts](#blog-posts)
+   - [Footer](#footer)
+   - [Post Detail](#post-detail)  
+   - [Authentication](#authentication)  
 
 
 [Testing](#testing)   
@@ -129,7 +130,6 @@ Tittillium Web is used for the headings and widgets due to its visual appeal. Th
 ------
 
 
-
 - HTML
 
 - CSS
@@ -168,44 +168,53 @@ Tittillium Web is used for the headings and widgets due to its visual appeal. Th
 ### Top Page
 <a name="top-page"></a>
   
-At the top of the page lies there is a short 
+At the top of the page lies there is a navbar with a short welcome message and the Home/Signup/Login options. If the user is already logged in, the options change to Home/Sign out. Below, there is an background image with the Metagaming name and logo. 
 
-![logo image](/assets/images/home-quiz.png "logo")
-
-
-
-### Page Image
-<a name="page-image"></a>
-
-As shown in the image above, the home page contains two small containers, "Your Goals" and "Start Quiz". The first contains the information on how many right answers it would take to reach a certain tier. Users can choose to skip that information and just start the quiz right away, instead. 
+![logo/navbar image](/static/media/images/nav.png "logo and navbar")
 
 
 
-### Quiz Section
-<a name="quiz-section"></a>
+### Carousel
+<a name="carousel"></a>
 
-This is the main page of the website. It is where users will take part in the quiz. It consists of a quiz container, that holds both the questions and the answers, and a home button underneath so that the home page is always within reach. On the bottom of the quiz container, there is a counter so users can know how many right answers they have so far. When a user clicks the right answer, it turns green, otherwise, it turns red. At that point, a next button (which is hidden by default), shows up. By clicking it, the next question will appear, the right answers counter will update, and the colors(red or green) will disappear.   
+Below the Metagaming image, there is a carousel that contains 3 posts. The first is fixed, displaying a message to sign up. The remaining two are the last posts created in the blog. On the right, there is a search bar so users can search for the content they desire. There are 3 additional side widgets, Upcoming Events, Recommended Games and Recommended Streamers below the search bar.   
 
-![quiz](/assets/images/quiz.png "quiz")
+![carousel image](/static/media/images/carousel.png "carousel")
 
+### Blog Posts
+<a name="blog-posts"></a>
 
-### End Results Section
-<a name="end-results-section"></a>
+The blog posts are displayed below the carousel. Each page contains up to 6 posts, that include image, author, category, date, title and excerpt. The users can open the posts either by clicking on the image or on the read more button.
 
-After clicking the next button on the final question, the whole quiz container will be hidden, and the final results container will be displayed. It contains the final number of right answers out of 15, and it reminds the user of how many it was required to be in each tier. Finally, there is a home and a start the quiz button. 
-
-![final results](/assets/images/end.png "final results")
+![blog image](/static/media/images/posts.png "blog")
 
 
 ### Footer
 <a name="footer"></a>
 
-This is where users can find all the social media links. The background color is goldenrod to maintain visual consistency. There are aria labels in all of the links for screen readers. 
+This is where users can find all the social media links. The background color is the same as the navbar to maintain visual consistency. There are aria labels in all of the links for screen readers. 
 
-All the icons were taken from "Font Awesome".
+![footer image](/static/media/images/footer.png "footer")
 
-![footer section](/assets/images/footer-quiz.png "footer")
 
+
+### Post Detail
+<a name="post-detail"></a>
+
+Whenever a uder clicks on a post, they will open the post detail page. Inside it, there is all the relevant information such as author, image, category and date, followed by the text content. At the bottom of the page, there is are upvote/downvote buttons and a comment section so users can show the way they feel about that content. Those are features that can only be accessed by registered users. 
+
+![post detail ](/static/media/images/postdetail.png "post-detail")
+![post detail2 ](/static/media/images/postdetail2.png "post-detail2")
+
+
+### Authentication
+<a name="authentication"></a>
+
+This blog contains 3 authentication related pages: login, sign up and sign out. The login page includes a link to the sign up page and vice versa. That way, users can complete their desired action in an intuitive manner. 
+
+![login image](/static/media/images/login.png "login")
+![sign up image](/static/media/images/sign-up.png "sign up")
+![sign out image](/static/media/images/sign-out.png "sign out")
 
 ## Testing
 <a name="testing"></a>
