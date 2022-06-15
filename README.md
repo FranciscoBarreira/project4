@@ -34,7 +34,14 @@ The link to the Github repository can be found [here.](https://github.com/Franci
    - [Blog Posts](#blog-posts)
    - [Footer](#footer)
    - [Post Detail](#post-detail)  
-   - [Authentication](#authentication)  
+   - [Authentication](#authentication)
+   - [Future Features](#future-features)    
+
+
+[Models](#models)   
+
+   - [Post Model](#post-model)
+   - [Comment model](#comment-model)
 
 
 [Testing](#testing)   
@@ -42,6 +49,8 @@ The link to the Github repository can be found [here.](https://github.com/Franci
    - [General Testing](#general-testing)
    - [Validator Testing](#validator-testing)
    - [Responsiveness Testing](#responsiveness-testing)
+
+[Bugs and Issues](#bugs-and-issues) 
 
 [Site Deployment](#site-deployment) 
 
@@ -217,6 +226,32 @@ This blog contains 3 authentication related pages: login, sign up and sign out. 
 ![sign up image](/static/media/images/sign-up.png "sign up")
 ![sign out image](/static/media/images/sign-out.png "sign out")
 
+
+### Future Features
+<a name="future-features"></a>
+
+- List of upvoted posts
+- Search by categories
+- Save posts 
+
+
+## Models
+<a name="models"></a>
+
+------
+
+### Post Model
+<a name="post-model"></a>
+
+![Post Model image](/static/media/images/post-model.png "post-model")
+![Post Model image2](/static/media/images/post-model2.png "post-model2")
+
+### Comment Model
+<a name="comment-model"></a>
+
+![Comment Model image](/static/media/images/comment-model.png "Comment-model")
+
+
 ## Testing
 <a name="testing"></a>
 
@@ -238,6 +273,19 @@ This blog contains 3 authentication related pages: login, sign up and sign out. 
 
 ![authenticated comment/upvote/downvote image](/static/media/images/comment.png "authenticated comment/upvote/downvote")
 
+- Sign in message: After loggin in, a successful sign in message appears for two seconds.
+
+![sucessful sign in image](/static/media/images/sign-in-message.png "successful sign in")
+
+- Sign out message: After signint out, a successful sign out message appears for two seconds.
+
+![sucessful sign out image](/static/media/images/sign-out-message.png "successful sign out")
+
+- Search bar: When a search is performed, a list of posts that match said search appear.
+
+![search image](/static/media/images/search.png "search")
+
+
 
 ### Validator Testing
 <a name="validator-testing"></a>
@@ -250,17 +298,21 @@ CSS- No errors were shown when put through the [CSS Validator](https://jigsaw.w3
 ### Responsiveness Testing
 <a name="responsiveness-testing"></a>
 
-The website responsiveness was tested using Chrome Dev Tools and was physically tested on a Samsung S20. It generally responded well to the different devices, however, there was a need to implement some changes, such as:
+This blog was designed with the help of bootstrap, which is a mobile first design tool. The website is responsible to all sorts of different devices. 
 
--Reducing the Logo font size to keep it from overflowing into the body of the page
 
--restructuring the quiz answers to keep them from overflowing the container
+## Bugs and Issues
+<a name="bugs-and-issues"></a>
 
--repositioning the home and next button as they were negatively affecting each other's position in smaller screens  
+------
 
--making width and margin related adjustments to the scorecard page to prevent it from deforming
+- No username in comments: The username was not showing in the posted comments. This was because I wrongly set comment_form.instance.username = request.user.username. The problem was fixed when i changed it to comment_form.instance.name = request.user.username.
 
--making width and margin related adjustments to the hidden div in the quiz page to prevent it from deforming
+- Categories bug: I could not get the full name to display in the post category, as it was not getting the human readable value. To fix this, I used the get_FOO_display.
+
+- Carousel bug: The carousel featured in the home page was presenting 4 posts when it should be limited to 3. This was fixed by using slice:2. 
+
+
 
 
 ## Site Deployment
