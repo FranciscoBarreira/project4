@@ -245,11 +245,11 @@ textarea:focus {
     transition: background .5s ease
 }
 
-[type="checkbox"]:not(:checked),
+/* [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
     position: absolute;
     display: none
-}
+} */
 
 [type="checkbox"]:not(:checked)+label,
 [type="checkbox"]:checked+label {

@@ -16,8 +16,20 @@
         <div class="col-lg-8">
             <div class="row">
                 
+                {% if page_obj|length == 0 %}
+                        <div class="col-lg-6">
+                          <div class="container">
+                              <div class="row justify-content-md-center">
+                                  <div class="col-md-10 offset-2 mt-4">
+                                      <h2>No Results</h2>
+                                      <p class="lead">Sorry, we couldn't find any posts with '{{ searched }}' in the title.</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>   
+                      {% endif %} 
+              {% for post in page_obj %}
                 <div class="col-lg-6">
-                    {% for post in page_obj %}
                     <a href="{% url 'post_detail' post.slug %}" class="text-decoration-none text-reset"></a>
                     <div class="card mb-4">
                         {% if "placeholder" in post.post_image.url %}
@@ -33,22 +45,8 @@
                             <a class="btn btn-primary" href="{% url 'post_detail' post.slug  %}">Read more →</a>
                         </div>
                     </div>
-                    
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        {% empty %}
-                        <div class="container">
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-10 offset-2 mt-4">
-                                    <h2>No Results</h2>
-                                    <p class="lead">Sorry, we couldn't find any posts with '{{ searched }}' in the title.</p>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %} 
-                    </div>   
-                </div>        
+              {% endfor %}     
             </div>
         </div>
         <!-- Side widgets-->
