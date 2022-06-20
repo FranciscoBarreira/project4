@@ -42,6 +42,7 @@ The link to the Github repository can be found [here.](https://github.com/Franci
 
    - [Post Model](#post-model)
    - [Comment model](#comment-model)
+   - [Diagram](#diagram)
 
 
 [Testing](#testing)   
@@ -164,6 +165,8 @@ Tittillium Web is used for the headings and widgets due to its visual appeal. Th
 
 - Cloudinary for online image storage
 
+- dbdiagram for the models diagram
+
 - W3C CSS Validator to validate CSS
 
 - W3C Markup Validator to validate HTML
@@ -251,6 +254,11 @@ This blog contains 3 authentication related pages: login, sign up and sign out. 
 
 ![Comment Model image](/static/media/images/comment-model.png "Comment-model")
 
+### Diagram
+<a name="diagram"></a>
+
+![Diagram image](/static/media/images/dbdiagram.png "Diagram")
+
 
 ## Testing
 <a name="testing"></a>
@@ -329,17 +337,8 @@ The Metagaming repository was created on GitHub by following these steps:
 - Click on the green Gitpod button to create the workspace
 
 
-This site was deployed to Heroku. The steps to deploy it were:
+This site was deployed to Heroku. To do so, I followed the steps in the [Django Blog cheatsheet.](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
 
-- Create new app and name it 
-
-- Click settings to set config vars, including DISABLE_COLLECTSTATIC=1 while DEBUG=TRUE
-
-- Click on resources and add Heroku-postgres
-
-- Under Deploy, connect the app to the Github repository
-
-- Under Manual Deploy, click Deploy Branch
 
 
 
