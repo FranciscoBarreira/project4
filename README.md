@@ -281,7 +281,7 @@ This blog contains 3 authentication related pages: login, sign up and sign out. 
 
 ![authenticated comment/upvote/downvote image](/static/media/images/comment.png "authenticated comment/upvote/downvote")
 
-- Sign in message: After loggin in, a successful sign in message appears for two seconds.
+- Sign in message: After logging in, a successful sign in message appears for two seconds.
 
 ![sucessful sign in image](/static/media/images/sign-in-message.png "successful sign in")
 
