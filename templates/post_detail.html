@@ -85,7 +85,10 @@
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary" style="margin-top: 1.3em;">Submit</button>
                         </form>
-                        
+
+                        {% else %}
+                                <form class="mb-4" method="post"><strong class = "user-txt">Login to Comment and Upvote/Downvote this post</strong>
+
                         {% endif %}
                         {% endif %}
                     

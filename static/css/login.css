@@ -236,7 +236,7 @@ label {
     padding-left: 15px;
     padding-bottom: 10px;
     color: rgba(255, 255, 255, .7);
-    display: block
+    display:inline-block
 }
 
 :focus {
