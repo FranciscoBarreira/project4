@@ -1,12 +1,12 @@
-
+{% load static %}
 
 {% load i18n %}
 
 
 
 {% block content %}
-<link href="/static/css/style.css" rel="stylesheet"/>
-<link href="/static/css/login.css" rel="stylesheet"/>
+<link href="{% static 'css/login.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container container-margin">
