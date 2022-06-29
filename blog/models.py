@@ -1,17 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
 POST_STATUS = ((0, "Draft"), (1, "Published"))
 
-R = 'Reviews'
-A = 'Announcements'
-N = 'News'
-O = 'Opinion'
-P = 'Previews'
-S = 'Streaming'
-T = 'Tech'
-M = 'Miscellaneous'
+
 
 CATEGORY_OPTIONS = (
     ('R', 'Reviews'),
@@ -70,3 +64,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+    def get_absolute_url(self):
+        """Defines the absolute URL"""
+        return reverse('post_detail', args=[self.post.slug])    

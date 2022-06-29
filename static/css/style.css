@@ -11356,3 +11356,8 @@ footer li:hover {
   opacity: 0.7;
 }
 
+.btn-crud {
+  width: 70px;
+  height: 40px;
+  border-radius: 0.2;
+}

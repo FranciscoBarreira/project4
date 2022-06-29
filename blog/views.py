@@ -135,6 +135,7 @@ class EditComment(UpdateView):
     model = Comment
     template_name = 'edit_comment.html'
     form_class = CommentForm
+    
 
 
 def delete_comment(request, comment_id):

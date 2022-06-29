@@ -36,7 +36,16 @@ class TestTemplates(TestCase):
         c = Client()
         response = c.get('/search')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'search.html')        
+        self.assertTemplateUsed(response, 'search.html')   
+
+    def test_edit_comment_page(self):
+        
+        comments = Comment.objects.all()
+        for comment in comments:
+            c = Client()
+            response = c.get(f'/edit_comment/{self.comment.id}')
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'edit_comment.html')         
 
 if __name__ == "__main__":
     unittest.main()
