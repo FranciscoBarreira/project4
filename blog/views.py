@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import UpdateView
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -77,6 +78,7 @@ class PostDetail(View):
 
 
 class Upvote(View):
+    """ Allows upvoting"""
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.upvotes.filter(id=request.user.id).exists():
@@ -88,6 +90,7 @@ class Upvote(View):
 
 
 class Downvote(View):
+    """ Allows downvoting"""
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.downvotes.filter(id=request.user.id).exists():
@@ -127,3 +130,16 @@ class SearchPost(View):
         else:
             return render(request, 'search.html', context)  
            
+class EditComment(UpdateView):
+    """ Allows user to edit commment """
+    model = Comment
+    template_name = 'edit_comment.html'
+    form_class = CommentForm
+
+
+def delete_comment(request, comment_id):
+    """allows user to delete comment"""
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    return HttpResponseRedirect(reverse(
+        'post_detail', args=[comment.post.slug]))           
