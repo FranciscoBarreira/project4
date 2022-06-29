@@ -27,7 +27,7 @@ body {
 .frame {
     height: 400px;
     width: 420px;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS82mL0lCjn8cUhnzzoE1oYnjPkobX4USGFXw&usqp=CAU) no-repeat center center;
+    background: #212529;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
@@ -41,7 +41,7 @@ body {
 .frame-up {
     height: 500px;
     width: 420px;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS82mL0lCjn8cUhnzzoE1oYnjPkobX4USGFXw&usqp=CAU) no-repeat center center;
+    background:#212529;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
@@ -55,7 +55,7 @@ body {
 .frame-out {
     height: 250px;
     width: 420px;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS82mL0lCjn8cUhnzzoE1oYnjPkobX4USGFXw&usqp=CAU) no-repeat center center;
+    background: #212529;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
@@ -547,6 +547,11 @@ a.btn-goback:hover {
 .btn-center {
   display: flex;
   justify-content: center;
+}
+
+.btn-purple {
+    color: white !important;
+    background-color: #990099 !important;
 }
 
 .link {
