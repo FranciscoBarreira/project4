@@ -5,7 +5,7 @@
 Mtagaming is a blog centered around videogames.It contains a vast array of content such as reviews, previews, opinion articles and even streaming. Users can sign up/login and interact with posts by commenting and upvoting/downvoting them.   
 
 
-The link to the deployed website can be found [here.](https://franciscobarreira.github.io/javascript-project/)
+The link to the deployed website can be found [here.](https://metagaming.herokuapp.com/)
 
 The link to the Github repository can be found [here.](https://github.com/FranciscoBarreira/project4/)
 
