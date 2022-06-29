@@ -2,7 +2,7 @@
 
 ------
 
-Mtagaming is a blog centered around videogames.It contains a vast array of content such as reviews, previews, opinion articles and even streaming. Users can sign up/login and interact with posts by commenting and upvoting/downvoting them.   
+Metagaming is a blog centered around videogames.It contains a vast array of content such as reviews, previews, opinion articles and even streaming. Users can sign up/login and interact with posts by commenting and upvoting/downvoting them.   
 
 
 The link to the deployed website can be found [here.](https://metagaming.herokuapp.com/)
@@ -277,9 +277,13 @@ This blog contains 3 authentication related pages: login, sign up and sign out. 
 
 ![non-authenticated comment/upvote/downvote image](/static/media/images/comment-signout.png "non-authenticated comment/upvote/downvote")
 
-- In this scenario, the user is logged in and has both upvoted and downvoted the post(for testing purposes), which is why both buttons have a red background. 
+- In this scenario, the user is logged in and has both upvoted and downvoted the post(for testing purposes), which is why both buttons have a red background.
 
 ![authenticated comment/upvote/downvote image](/static/media/images/comment.png "authenticated comment/upvote/downvote")
+
+- Edit/Delete Comment: If authenticated, the user can delete or edit a comment they made. Pressing delete will permanently erase the comment, while pressing edit will take the user to the screen shown below. 
+
+![edit/delete image](/static/media/images/edit.png "edit/delete")
 
 - Sign in message: After logging in, a successful sign in message appears for two seconds.
 
